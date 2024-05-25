@@ -8,8 +8,6 @@ window.ui.dialog = {
         const dialog = document.querySelector(id);
         dialog.classList.add("global_block_scroll");
         dialog.show();
-        const pages = dialog.querySelector(".modal__pages");
-        pages.firstChild.scrollIntoView()
         dialog.addEventListener("close", this.onDialogClose);
     },
 
