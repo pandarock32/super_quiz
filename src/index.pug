@@ -1,0 +1,27 @@
+include components/ui/index
+include components/header/header
+include components/banner/banner
+include components/contact_us/contact_us
+include components/footer/footer
+include components/reviews/reviews
+
+doctype html
+html(lang="ru")
+    head
+        meta(content="width=device-width,initial-scale=1.0,minimum-scale=1.0,shrink-to-fit=no" name="viewport")
+        meta(charset="UTF-8")
+        link(rel="icon" type="image/x-icon" href="/assets/img/favicon.ico")
+        title Квиз
+        // @injectPlaceCSS
+        // @injectCSS(style.css)
+    body
+        +pageHeader(header)
+        main
+            +contact_us_dialog()
+            +banner(banner)
+            +smiles(smiles)
+            +superQuiz(quiz)
+            +reviews(reviews)
+        +pageFooter(footer)
+        // @injectPlaceJS
+

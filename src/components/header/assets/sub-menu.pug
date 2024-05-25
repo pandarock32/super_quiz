@@ -1,0 +1,10 @@
+mixin sub-menu(option)
+    li.header__nav-menu-option.header__nav-menu-option_custom
+        div.header__nav-sub-menu-wrapper
+            a(href=option.href).header__nav-menu-link
+                span= option.name
+            ul.header__nav-sub-menu-dropdown
+                each child in option.children
+                    li.header__nav-sub-menu-option
+                        a(href=child.href).header__nav-sub-menu-link
+                            span= child.name

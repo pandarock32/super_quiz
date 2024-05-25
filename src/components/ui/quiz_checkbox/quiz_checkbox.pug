@@ -1,0 +1,9 @@
+mixin quiz_checkbox(id, name, label, value, onchange)
+    // @injectCSS(@components/ui/quiz_checkbox/quiz_checkbox.css)
+    // @injectJS(@components/ui/quiz_checkbox/quiz_checkbox.js)
+    div.super-quiz-checkbox
+        div.super-quiz-checkbox__inner
+            span.super-quiz-checkbox__icon
+            label(for=id).super-quiz-checkbox__label= label
+                input(id=id type="checkbox" checked=checked onchange=onchange).super-quiz-checkbox__value
+

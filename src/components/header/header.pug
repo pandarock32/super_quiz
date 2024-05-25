@@ -1,0 +1,25 @@
+include ../ui/index
+include assets/sub-menu
+include assets/menu-item
+
+mixin pageHeader(header)
+    // @injectCSS(@components/header/header.css)
+    // @injectJS(@components/header/script.js)
+    header.header
+        div.header__inner
+            span.header__logo= header.title
+            div.header__menu-content
+                div.header__menu-content__inner
+                nav.header__nav
+                    ul.header__nav-menu
+                        each option in header.menu
+                            if option.children
+                                +sub-menu(option)
+                            else
+                                +menu-item(option)
+                div.header__contacts
+                    +socials(socials)
+                    a(href="#contact_us_page1" class="contact_with_us" onclick="window.ui.dialog.show('#contact_us_dialog')").button Связаться с нами
+                    //+ui_button("contact_us", "contact_with_us", "button",  "Связаться с нами", "window.ui.dialog.show('#contact_us_dialog')")
+            +ui_button("menu", "menu-button header__menu-button", "button")
+

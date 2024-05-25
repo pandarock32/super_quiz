@@ -1,0 +1,11 @@
+mixin input_file(placeholder)
+    // @injectCSS(@components/ui/input_file/input_file.css)
+    // @injectJS(@components/ui/input_file/input_file.js)
+    div.file-input.default-input
+        span.file-input__placeholder= placeholder
+        div.file-input__button-block
+            label.file-input__button.button
+                span.file-input__button-text Приложить файлы
+                input(type="file" multiple onchange="window.ui.input_file.onChange(this)").file-input__input
+            div.file-input__warning
+                span.file-input__warning-text

@@ -1,0 +1,133 @@
+@import "@@vars";
+
+.super-quiz-checkbox {
+    display: inline-block;
+    cursor: pointer;
+
+    &__inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+
+        padding: .5rem 1.5rem;
+
+        border-radius: 1rem;
+        background-color: white;
+        outline: .125rem solid black;
+        transition: all $transition;
+        user-select: none;
+
+        &:has(:checked) {
+            background-color: black;
+            color: $text-color-secondary;
+
+            .super-quiz-checkbox__icon {
+                width: 1rem;
+                margin-right: .5rem;
+            }
+        }
+
+        &:active {
+            background-color: $color-primary;
+            outline-color: $color-primary;
+            color: $text-color-secondary;
+
+            &:has(:checked) {
+                outline-color: black;
+                background-color: black;
+
+                .super-quiz-checkbox__icon {
+                    &::before {
+                        background-color: $color-primary;
+                    }
+
+                    &::after {
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__value {
+        display: none;
+    }
+
+    &__icon {
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 1rem;
+        margin-right: 0;
+        flex-shrink: 0;
+
+        transition: all $transition;
+
+        &::after, &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+
+            content: "";
+            transition: all $transition;
+        }
+
+        &:before {
+            background-color: white;
+            border-radius: 100%;
+        }
+
+        &:after {
+            @include mask_image;
+
+            mask-image: url("@@img/components/ui/quiz_checkbox/checked_icon.svg");
+            background-color: black;
+        }
+    }
+
+    &__label {
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .super-quiz-checkbox {
+
+        &__inner {
+            padding: .5rem 2rem;
+            border-radius: 1.35rem;
+
+            &:hover {
+                background-color: $color-primary;
+                outline-color: $color-primary;
+                color: $text-color-secondary;
+
+                &:has(:checked) {
+                    outline-color: black;
+                    background-color: black;
+
+                    .super-quiz-checkbox__icon {
+                        &::before {
+                            background-color: $color-primary;
+                        }
+
+                        &::after {
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__label {
+            font-size: 1.5rem;
+        }
+    }
+}

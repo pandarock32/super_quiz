@@ -1,0 +1,6 @@
+mixin socials(socials)
+    // @injectCSS(@components/ui/socials/socials.css)
+    ul.socials
+        each social in socials
+            li.socials__item
+                a.socials__item-icon(href=social.href, class=social.className)

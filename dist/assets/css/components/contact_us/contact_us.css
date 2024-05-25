@@ -1,0 +1,175 @@
+.modal {
+  position: absolute;
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  outline: none;
+  top: 0;
+  left: 0;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  visibility: collapse;
+  overflow-y: auto;
+  backdrop-filter: blur(12rem);
+  background: transparent;
+  z-index: 35;
+  background: linear-gradient(rgba(247, 235, 255, 0.5), rgba(247, 235, 255, 0.5)), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  background-blend-mode: multiply;
+}
+.modal[open] {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__header-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  z-index: 10;
+}
+.modal__header-close::after {
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  mask-image: url("/assets/img/components/contact_us/close.svg");
+}
+.modal__pages {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  justify-content: start;
+  transition: all 0.15s ease;
+  max-height: 100%;
+}
+.modal__page {
+  width: 100%;
+  padding: 1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: hidden;
+  transition: max-height 0.15s ease;
+  height: auto;
+}
+.modal__page:target {
+  height: 100%;
+}
+.modal__page:not(.modal__page:target) {
+  height: 0;
+}
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 8.75rem;
+  margin-bottom: 5rem;
+  border-radius: 2rem;
+  background-color: white;
+  position: relative;
+  width: 100%;
+}
+.modal__page-header {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+}
+.modal__page-header-title {
+  font-family: "Neue Machina";
+  font-weight: 800;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+.modal__page-content-text {
+  padding-bottom: 1.5rem;
+}
+.modal__page-content {
+  display: flex;
+  flex-direction: column;
+}
+.modal__page-content-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+.modal__page-content-another-text {
+  padding-bottom: 1.5rem;
+}
+.modal__page-content-another-inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 4rem;
+}
+.modal__page-header-smile {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin-top: 8rem;
+}
+.modal #contact_us_page2 .modal__page-header-title {
+  padding-top: 1rem;
+}
+.modal #contact_us_page2 .modal__page-content-text {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal__form {
+    max-width: 42rem;
+    margin-top: 7.25rem;
+  }
+  .modal__page-header-title {
+    font-size: 4rem;
+    padding-bottom: 4rem;
+  }
+  .modal__page {
+    padding: 0 2rem;
+  }
+  .modal__page-content-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+  }
+  .modal__page-content-inputs .default-input {
+    flex: 1;
+  }
+  .modal__page-content-inputs .file-input {
+    width: 100%;
+  }
+  .modal__page-content {
+    padding-bottom: 2rem;
+  }
+  .modal__page-content-another-text, .modal__page-content-text {
+    font-size: 1.25rem;
+  }
+  .modal #contact_us_page2 .modal__page-header-title {
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+  }
+  .modal #contact_us_page2 .modal__page-content-text {
+    padding-top: 0;
+  }
+  .modal__header-close:hover::after {
+    background-color: white;
+  }
+}

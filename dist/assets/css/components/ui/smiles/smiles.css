@@ -1,0 +1,56 @@
+.smiles {
+  display: inline-block;
+  padding: 0.5rem;
+  position: relative;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.smiles__wrapper {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.smiles__item:last-child {
+  padding-right: 0.5rem;
+}
+.smiles__button {
+  outline: none;
+  border: none;
+  font-size: inherit;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: white;
+  border-radius: 2rem;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+.smiles__button:active {
+  background-color: #9E00FF;
+  color: #FFF;
+}
+.smiles__label {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.smiles__text {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  user-select: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .smiles__button {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .smiles__button:hover {
+    background-color: #9E00FF;
+    color: #FFF;
+  }
+}

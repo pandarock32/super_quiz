@@ -1,0 +1,12 @@
+mixin ui_select(id, name, defaultOptionID, options, onchange)
+    // @injectJS(@components/ui/select/select.js)
+    // @injectCSS(@components/ui/select/select.css)
+
+    div.default-select(data-collapsed="true")
+        input(id=id name=name type="hidden" class="default-select__value" value=options[defaultOptionID].value onchange=onchange)
+        button(class="default-select__button" type="button" onclick="window.ui.select.toggle(this)")
+            span(class="default-select__text")= options[defaultOptionID].text
+            span(class="default-select__arrow")
+        ul(class="default-select__dropdown")
+            each option in options
+                li(class="default-select__dropdown-option" data-value=option.value onclick="window.ui.select.select(this)")= option.text

@@ -1,0 +1,216 @@
+@import "@@vars";
+
+
+.modal {
+    position: absolute;
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    outline: none;
+    top: 0;
+    left: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all $transition;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    visibility: collapse;
+
+    overflow-y: auto;
+
+    backdrop-filter: blur(12rem);
+    background: transparent;
+    z-index: $z-index-header + 5;
+
+    background: linear-gradient(rgba(#F7EBFF, 0.5), rgba(#F7EBFF, 0.5)),
+    linear-gradient(rgba(#FFF, 0.5), rgba(#FFF, 0.5));
+    background-blend-mode: multiply;
+
+    &[open] {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__header-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        z-index: $z-index-content;
+
+        &::after {
+            @include mask_image;
+            content: "";
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            background-color: black;
+            mask-image: url("@@img/components/contact_us/close.svg");
+        }
+    }
+
+    &__pages {
+        @include clear_ul;
+
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        overflow: hidden;
+        align-items: center;
+        justify-content: start;
+        transition: all $transition;
+        max-height: 100%;
+    }
+
+    &__page {
+        width: 100%;
+        padding: 1rem;
+        flex-shrink: 0;
+        flex-grow: 0;
+        overflow: hidden;
+        transition: max-height $transition;
+        height: auto;
+
+        &:target {
+            height: 100%;
+        }
+
+        &:not(&:target) {
+            height: 0;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 8.75rem;
+        margin-bottom: 5rem;
+        border-radius: 2rem;
+        background-color: white;
+        position: relative;
+        width: 100%;
+    }
+
+    &__page-header {
+        display: flex;
+        position: relative;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    &__page-header-title {
+        font-family: "Neue Machina";
+        font-weight: 800;
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+
+    &__page-content-text {
+        padding-bottom: 1.5rem;
+    }
+
+    &__page-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__page-content-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    &__page-content-another-text {
+        padding-bottom: 1.5rem;
+    }
+
+    &__page-content-another-inputs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding-bottom: 4rem;
+    }
+
+    &__page-header-smile {
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        margin-top: 8rem;
+    }
+
+    #contact_us_page2 {
+        .modal__page-header-title {
+            padding-top: 1rem;
+        }
+        .modal__page-content-text {
+            padding-top: 1rem;
+            padding-bottom: 4rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .modal {
+        &__form {
+            max-width: 42rem;
+            margin-top: 7.25rem;
+        }
+
+        &__page-header-title {
+            font-size: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        &__page {
+            padding: 0 2rem;
+        }
+
+        &__page-content-inputs {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 4rem;
+
+            .default-input {
+                flex: 1;
+            }
+
+            .file-input {
+                width: 100%;
+            }
+        }
+
+        &__page-content {
+            padding-bottom: 2rem;
+        }
+
+        &__page-content-another-text,
+        &__page-content-text {
+            font-size: 1.25rem;
+        }
+
+        #contact_us_page2 {
+            .modal__page-header-title {
+                padding-top: 1.5rem;
+                padding-bottom: 0;
+            }
+            .modal__page-content-text {
+                padding-top: 0;
+            }
+        }
+
+        &__header-close:hover {
+            &::after {
+                background-color: white;
+            }
+        }
+    }
+}

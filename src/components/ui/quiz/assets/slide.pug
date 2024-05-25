@@ -1,0 +1,29 @@
+mixin slide(quiz, slide, i, slideId)
+    li(id=slideId class=`${i === 0 ? "" : "super-quiz__slider-item_invisible"}`).super-quiz__slider-item
+        if (slide.icon)
+            img(src=slide.icon alt="smile.png").super-quiz__slider-item-icon
+        h3.super-quiz__slider-item-title= slide.title
+        p.super-quiz__slider-item-text= slide.text
+        ul.super-quiz__slider-item-options
+            each option, j in slide.options
+                - const optionId = `${slideId}_option_${j}`
+                li.super-quiz__slider-item-options-item
+                    case (option.type)
+                        when "checkbox"
+                            +quiz_checkbox(optionId, option.name, option.label, option.value, "window.ui.quiz.updateSlideSelected(this)")
+                        when "radio"
+                            +quiz_radio(optionId, option.name, option.label, option.value, "window.ui.quiz.updateSlideSelected(this)")
+                        when "input"
+                            input(id=optionId name=option.name placeholder = option.label value=option.value onchange="window.ui.quiz.updateSlideSelected(this)").default-input
+                        when "select"
+                            +ui_select(optionId, option.name, option.value, option.options, "window.ui.quiz.updateSlideSelected(this)")
+        nav.super-quiz__slider-item-nav
+            ul.super-quiz__slider-item-nav-options
+                li.super-quiz__slider-item-nav-options-prev
+                    if i > 0
+                        button(type="button" onclick="window.ui.quiz.prev(this)").super-quiz__slider-item-nav-options-prev-button.button.button_theme_secondary Назад
+                li.super-quiz__slider-item-nav-options-next
+                    if i < quiz.slides.length - 1
+                        button(type="button" onclick="window.ui.quiz.next(this)").super-quiz__slider-item-nav-options-next-button.button Продолжить
+                    if (i === quiz.slides.length - 1)
+                        button.super-quiz__slider-item-nav-options-next-button.button Продолжить

@@ -1,0 +1,56 @@
+.banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 10;
+  text-align: start;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 3.75rem 1rem 8rem 1rem;
+  background-color: white;
+  background-image: url("/assets/img/components/banner/mobile_left.png"), url("/assets/img/components/banner/mobile_right.png");
+  background-position: bottom left, bottom right;
+  background-size: auto, 50%;
+  border-radius: 0 0 2rem 2rem;
+}
+.banner__title {
+  white-space: normal;
+}
+.banner__text {
+  display: block;
+  font-weight: 600;
+  width: 100%;
+}
+
+@media screen and (min-width: 425px) {
+  .banner__text {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    background-image: url("/assets/img/components/banner/mobile_left.png"), url("/assets/img/components/banner/mobile_right.png");
+    background-size: 15%, 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    background-image: url("/assets/img/components/banner/desktop_left.png"), url("/assets/img/components/banner/desktop_right.png");
+    background-size: 20%, 20%;
+  }
+  .banner__title {
+    font-size: 6rem;
+  }
+  .banner__text {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}

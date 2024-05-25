@@ -1,0 +1,33 @@
+.socials {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.socials__item {
+  display: flex;
+}
+.socials__item-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  background-size: auto 100%;
+  border-radius: 2.5rem;
+}
+.socials__item-icon_tiktok {
+  background-image: url("/assets/img/components/ui/socials/tiktok.png");
+  background-color: black;
+}
+.socials__item-icon_vk {
+  background-image: url("/assets/img/components/ui/socials/vk.png");
+  background-color: #4D76A1;
+}
+.socials__item-icon_telegram {
+  background-image: url("/assets/img/components/ui/socials/telegram.png");
+  background-color: #34AADF;
+}

@@ -1,0 +1,49 @@
+$color-primary: #9E00FF;
+$color-primary-variant: #E9C4FF;
+$color-primary-variant2: #F0D9FF;
+
+$color-background: #F9EFFF;
+
+$color-secondary: #000;
+$color-error: #FF004C;
+$color-shadow: #F2F2F2;
+
+$text-color-primary: #000;
+$text-color-secondary: #FFF;
+
+$transition: .15s ease;
+
+$z-index-background: 0;
+$z-index-content: 10;
+$z-index-modal: 20;
+$z-index-header: 30;
+
+
+@mixin clear_a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@mixin clear_ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+@mixin clear_button {
+    outline: none;
+    border: none;
+    font-size: inherit;
+    padding: 0;
+}
+
+@mixin background_image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@mixin mask_image {
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+}

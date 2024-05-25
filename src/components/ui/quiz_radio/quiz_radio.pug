@@ -1,0 +1,8 @@
+mixin quiz_radio(id, name, label, value, onchange)
+    // @injectCSS(@components/ui/quiz_radio/quiz_radio.css)
+    // @injectJS(@components/ui/quiz_radio/quiz_radio.js)
+    div.super-quiz-radio
+        div.super-quiz-radio__inner
+            span.super-quiz-radio__icon
+            label.super-quiz-radio__label= label
+                input(id=id name=name type="radio" value=value onchange=onchange).super-quiz-radio__value

@@ -1,0 +1,286 @@
+{
+  "header": {
+    "title": "Super Quiz",
+    "menu": [
+      {
+        "name": "Главная",
+        "href": "/"
+      },
+      {
+        "name": "Квиз",
+        "href": "#super_quiz"
+      },
+      {
+        "name": "Отзывы",
+        "href": "#reviews"
+      },
+      {
+        "name": "Не главная",
+        "href": "#options",
+        "children": [
+          {
+            "name": "Подпункт",
+            "href": "#option1"
+          },
+          {
+            "name": "Ещё подпункт",
+            "href": "#option2"
+          },
+          {
+            "name": "И ещё один подпункт",
+            "href": "#option3"
+          }
+        ]
+      }
+    ]
+  },
+  "banner": {
+    "title": "Это Супер-квиз!",
+    "text": "Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!",
+    "buttonText": "Пройти супер-квиз"
+  },
+  "socials": [
+    {
+      "href": "https://tiktok.com",
+      "className": "socials__item-icon_tiktok"
+    },
+    {
+      "href": "https://vk.com",
+      "className": "socials__item-icon_vk"
+    },
+    {
+      "href": "https://telegram.org/",
+      "className": "socials__item-icon_telegram"
+    }
+  ],
+  "smiles": [
+    {
+      "alt": "\uD83D\uDE0B",
+      "text": "Восхитительно",
+      "img": "/assets/img/components/ui/smiles/wonderfully.png"
+    },
+    {
+      "alt": "\uD83D\uDE0E",
+      "text": "Лучше не бывает",
+      "img": "/assets/img/components/ui/smiles/better.png"
+    },
+    {
+      "alt": "\uD83D\uDE0D",
+      "text": "Где найти еще?",
+      "img": "/assets/img/components/ui/smiles/find_more.png"
+    },
+    {
+      "alt": "\uD83E\uDD29",
+      "text": "В натуре четко!",
+      "img": "/assets/img/components/ui/smiles/chetko.png"
+    },
+    {
+      "alt": "\uD83D\uDE0D",
+      "text": "Круто",
+      "img": "/assets/img/components/ui/smiles/find_more.png"
+    }
+  ],
+  "quiz": {
+    "id": "super_quiz",
+    "slides": [
+      {
+        "title": "Какие виды тестов вам нравятся?",
+        "text": "Многие из нас хоть раз попадались на эту удочку — хочешь пройти всего один тест из интернета, и вдруг понимаешь, что пролетело полдня.",
+        "options": [
+          {
+            "label": "На темперамент",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "1"
+          },
+          {
+            "label": "Кто я из вселенной марвел",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "2"
+          },
+          {
+            "label": "Увидел это",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "3"
+          },
+          {
+            "label": "Мое тотемное животное",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "4"
+          },
+          {
+            "label": "На IQ",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "5"
+          },
+          {
+            "label": "На словарный запас",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "6"
+          },
+          {
+            "label": "На логическое мышление",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "7"
+          },
+          {
+            "label": "На уровень интеллекта",
+            "type": "checkbox",
+            "name": "favourite_tests[]",
+            "value": "8"
+          }
+        ]
+      },
+      {
+        "title": "Вы любите проходить тесты?",
+        "text": "Нам важно узнать насколько часто Вы проходите тесты.",
+        "options": [
+          {
+            "label": "Нет, я не никогда не прохожу тесты",
+            "type": "radio",
+            "name": "how_often",
+            "value": "1"
+          },
+          {
+            "label": "Да, я прохожу все тесты",
+            "type": "radio",
+            "name": "how_often",
+            "value": "2"
+          },
+          {
+            "label": "Заставляю себя проходить тесты",
+            "type": "radio",
+            "name": "how_often",
+            "value": "3"
+          },
+          {
+            "label": "Не люблю проходить тесты, но иногда приходится",
+            "type": "radio",
+            "name": "how_often",
+            "value": "4"
+          }
+        ]
+      },
+      {
+        "icon": "/assets/img/components/ui/quiz/smile.png",
+        "title": "Спасибо за ответы! Заполните форму ниже",
+        "text": "Ваше мнение важно для нас. Прикрепите фото с Вашей любимой картинкой и оставьте комментарий насколько понравился Вам тест.",
+        "options": [
+          {
+            "label": "Ваше мнение сюда",
+            "type": "input",
+            "name": "review",
+            "value": ""
+          },
+          {
+            "label": "",
+            "type": "select",
+            "value": 0,
+            "options": [
+              {
+                "text": "Очень понравился",
+                "value": "1"
+              },
+              {
+                "text": "Не понравился",
+                "value": "2"
+              },
+              {
+                "text": "Пройду еще раз",
+                "value": "3"
+              },
+              {
+                "text": "Посоветую пройти всем",
+                "value": "4"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "name": "Тимур Никитенко",
+      "text": "Мне очень понравился тест.",
+      "image": "/assets/img/reviews/timur.png",
+      "background": "/assets/img/reviews/timur_background.png"
+    },
+    {
+      "name": "Андрей Пархимович",
+      "text": "В целом, конечно, постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.",
+      "image": "/assets/img/reviews/andrey.png",
+      "background": "/assets/img/reviews/andrey_background.png"
+    },
+    {
+      "name": "Тимур Никитенко",
+      "text": "Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.",
+      "image": "/assets/img/reviews/timur.png",
+      "background": "/assets/img/reviews/timur_background.png"
+    },
+    {
+      "name": "Артур Усович",
+      "text": "Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.",
+      "image": "/assets/img/reviews/artur.png",
+      "background": "/assets/img/reviews/artur_background.png"
+    },
+    {
+      "name": "Егор Грей",
+      "text": "Разнообразный и богатый опыт говорит нам, что высокое качество позиционных исследований предопределяет высокую востребованность кластеризации усилий.",
+      "image": "/assets/img/reviews/egor.png",
+      "background": "/assets/img/reviews/egor_background.png"
+    }
+  ],
+  "old": [
+        {
+          "name": "Тимур Никитенко",
+          "text": "Мне очень понравился тест.",
+          "image": "/assets/img/reviews/timur.png",
+          "background": "/assets/img/reviews/timur_background.png"
+        },
+        {
+        "name": "Андрей Пархимович",
+        "text": "В целом, конечно, постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.",
+        "image": "/assets/img/reviews/andrey.png",
+        "background": "/assets/img/reviews/andrey_background.png"
+        },
+        {
+        "name": "Тимур Никитенко",
+        "text": "Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.",
+        "image": "/assets/img/reviews/timur.png",
+        "background": "/assets/img/reviews/timur_background.png"
+        },
+        {
+        "name": "Артур Усович",
+        "text": "Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.",
+        "image": "/assets/img/reviews/artur.png",
+        "background": "/assets/img/reviews/artur_background.png"
+        },
+        {
+        "name": "Егор Грей",
+        "text": "Разнообразный и богатый опыт говорит нам, что высокое качество позиционных исследований предопределяет высокую востребованность кластеризации усилий.",
+        "image": "/assets/img/reviews/egor.png",
+        "background": "/assets/img/reviews/egor_background.png"
+        }
+  ],
+  "footer": {
+    "contacts": [
+      {
+        "label": "Телефон",
+        "value": "+375 12 345 67 89",
+        "href": "tel:375123456789"
+      },
+      {
+        "label": "Email",
+        "value": "ourmail@gmail.com",
+        "href": "mailto:ourmail@gmail.com"
+      }
+    ]
+  }
+}

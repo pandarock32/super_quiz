@@ -1,0 +1,94 @@
+.super-quiz-radio {
+  display: inline-block;
+  cursor: pointer;
+}
+.super-quiz-radio__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  background-color: white;
+  outline: 0.125rem solid black;
+  transition: 0.15s ease;
+  user-select: none;
+}
+.super-quiz-radio__inner:has(:checked) {
+  background-color: black;
+  color: #FFF;
+}
+.super-quiz-radio__inner:has(:checked) .super-quiz-radio__icon::before {
+  background-color: black;
+}
+.super-quiz-radio__inner:active {
+  background-color: #9E00FF;
+  outline-color: #9E00FF;
+  color: #FFF;
+}
+.super-quiz-radio__inner:active .super-quiz-radio__icon {
+  outline: #9E00FF;
+}
+.super-quiz-radio__inner:active:has(:checked) {
+  outline-color: black;
+  background-color: black;
+}
+.super-quiz-radio__inner:active:has(:checked) .super-quiz-radio__icon::before {
+  background-color: #9E00FF;
+}
+.super-quiz-radio__value {
+  display: none;
+}
+.super-quiz-radio__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  outline: 0.125rem solid black;
+  transition: all 0.15s ease;
+}
+.super-quiz-radio__icon::before {
+  display: inline-block;
+  width: 65%;
+  height: 65%;
+  border-radius: 100%;
+  content: "";
+  transition: all 0.15s ease;
+  background-color: transparent;
+}
+.super-quiz-radio__label {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .super-quiz-radio__inner {
+    padding: 0.5rem 2rem;
+    border-radius: 1.35rem;
+  }
+  .super-quiz-radio__inner:hover {
+    background-color: #9E00FF;
+    outline-color: #9E00FF;
+    color: #FFF;
+  }
+  .super-quiz-radio__inner:hover .super-quiz-radio__icon {
+    outline: #9E00FF;
+  }
+  .super-quiz-radio__inner:hover:has(:checked) {
+    outline-color: black;
+    background-color: black;
+  }
+  .super-quiz-radio__inner:hover:has(:checked) .super-quiz-radio__icon::before {
+    background-color: #9E00FF;
+  }
+  .super-quiz-radio__label {
+    font-size: 1.5rem;
+  }
+}

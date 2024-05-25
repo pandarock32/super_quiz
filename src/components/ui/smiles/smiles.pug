@@ -1,0 +1,10 @@
+mixin smiles(smiles)
+    // @injectCSS(@components/ui/smiles/smiles.css)
+    div.smiles_block
+        div.smiles
+            ul.smiles__wrapper
+                each smile in smiles
+                    li.smiles__item
+                        button.smiles__button
+                            img(alt=smile.alt src=smile.img).smiles__label
+                            span.smiles__text= smile.text

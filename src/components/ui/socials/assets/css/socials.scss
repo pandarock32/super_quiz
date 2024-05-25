@@ -1,0 +1,42 @@
+@import "@@vars";
+
+.socials {
+    @include clear_ul;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: .5rem;
+
+    &__item {
+        display: flex;
+    }
+
+    &__item-icon {
+        @include background_image;
+
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+
+        background-size: auto 100%;
+
+        border-radius: 2.5rem;
+
+        &_tiktok {
+            background-image: url("@@img/components/ui/socials/tiktok.png");
+            background-color: black;
+        }
+
+        &_vk {
+            background-image: url("@@img/components/ui/socials/vk.png");
+            background-color: #4D76A1;
+        }
+
+        &_telegram {
+            background-image: url("@@img/components/ui/socials/telegram.png");
+            background-color: #34AADF
+        }
+    }
+
+}

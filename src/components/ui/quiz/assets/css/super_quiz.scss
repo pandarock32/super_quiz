@@ -1,0 +1,367 @@
+@import "@@vars";
+
+.super-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+
+    padding-bottom: .75rem;
+
+    &__history-wrapper {
+
+    }
+
+    &__history {
+        @include clear_ul;
+
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+    }
+
+    &__history-item {
+        position: relative;
+        transition: all $transition;
+        opacity: 1;
+        max-height: 100%;
+
+        &:first-child {
+            .super-quiz__history-item-inner {
+                border-radius: 2rem 2rem 1rem 1rem;
+            }
+        }
+
+        &_invisible {
+            opacity: 0;
+            max-height: 0;
+        }
+
+        &_current {
+            .super-quiz__history-item-inner {
+                background-color: black;
+                color: $text-color-secondary;
+            }
+        }
+    }
+
+    &__history-item-inner {
+        @include clear_button;
+
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        padding: .625rem 1.5rem;
+
+        text-align: start;
+        background-color: white;
+        border-radius: 1rem;
+
+        text-decoration: none;
+        width: 100%;
+        cursor: pointer;
+        transition: all $transition;
+
+
+        &:active {
+            background-color: $color-primary;
+            color: $text-color-secondary;
+        }
+    }
+
+    &__history-item-name {
+        font-weight: 600;
+    }
+
+    &__history-item-value {
+
+    }
+
+    &__slider-wrapper {
+        position: relative;
+        box-sizing: border-box;
+
+        &:after,
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+        }
+
+        &:after {
+            top: .375rem;
+            left: 0;
+            z-index: calc($z-index-background + 1);
+            background-color: $color-primary-variant;
+            width: calc(100% - 1.5rem);
+            margin: 0 .75rem;
+        }
+
+        &:before {
+            top: .75rem;
+            left: 0;
+            z-index: $z-index-background;
+            background-color: $color-primary-variant2;
+            width: calc(100% - 3rem);
+            margin: 0 1.5rem;
+        }
+    }
+
+    &__slider {
+        @include clear_ul;
+
+        position: relative;
+        z-index: $z-index-header;
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+        align-items: stretch;
+        flex-wrap: nowrap;
+
+        background-color: white;
+
+        overflow: hidden;
+        width: 100%;
+        border-radius: 1rem 1rem 2rem 2rem;
+        gap: 1rem;
+
+        scroll-behavior: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+    }
+
+    &__slider-item {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+
+        width: 100%;
+        padding: 1rem;
+    }
+
+    &__slider-item-icon {
+        width: 16rem;
+        height: 8rem;
+    }
+
+    &__slider-item-title {
+        padding-top: 1rem;
+        font-size: 2.5rem;
+    }
+
+    &__slider-item-text {
+        padding-top: 1rem;
+    }
+
+    &__slider-item-options {
+        @include clear_ul;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        gap: .5rem;
+
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        width: 100%;
+    }
+
+    &__slider-item-options-item {
+
+        &:has(.default-select) {
+            width: 100%;
+        }
+
+        &:has(.default-input) {
+            width: 100%;
+        }
+
+        .default-input {
+            width: 100%;
+        }
+
+        .default-select {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+    }
+
+    &__slider-item-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        flex: 1;
+    }
+
+    &__slider-item-nav-options {
+        @include clear_ul;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: .5rem;
+        width: 100%;
+    }
+
+    &__slider-item-nav-options-prev {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__slider-item-nav-options-prev-button {
+        @include clear_a;
+        border-radius: .5rem .5rem .5rem 1rem;
+        width: 100%;
+    }
+
+    &__slider-item-nav-options-next {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__slider-item-nav-options-next-button {
+        @include clear_a;
+        border-radius: .5rem .5rem 1rem .5rem;
+        color: white;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .super-quiz {
+        flex-direction: row;
+        gap: .5rem;
+        padding-top: .75rem;
+        max-width: 90rem;
+        margin: auto;
+
+        &__history-wrapper {
+            flex: 1;
+            max-width: 20rem;
+        }
+
+        &__history-item {
+
+            .super-quiz__history-item-inner {
+                border-radius: 0 .5rem .5rem 0;
+            }
+
+            &:first-child {
+                .super-quiz__history-item-inner {
+                    border-radius: 0 2rem .5rem 0;
+                }
+
+                &.super-quiz__history-item_rounded {
+                    .super-quiz__history-item-inner {
+                        border-radius: 0 2rem 2rem 0;
+                    }
+                }
+            }
+
+            &:last-child {
+                .super-quiz__history-item-inner {
+                    border-radius: 0 .5rem 2rem 0;
+                }
+            }
+
+
+        }
+
+        &__history-item-inner {
+            position: relative;
+            padding: .625rem 1.5rem;
+
+            &:active {
+                background-color: $color-primary;
+                color: $text-color-secondary;
+
+                &:after {
+                    background-color: white;
+                }
+            }
+
+            &:after {
+                @include mask_image;
+
+                content: "";
+                position: absolute;
+                right: 1.5rem;
+                top: 0;
+                height: 100%;
+                mask-size: 100% auto;
+                width: .5rem;
+                display: inline-block;
+                transition: all $transition;
+                background-color: transparent;
+                mask-image: url("@@img/components/ui/quiz/arrow.svg");
+            }
+
+            &:hover {
+                background-color: $color-primary;
+                color: $text-color-secondary;
+
+                &:after {
+                    background-color: white;
+                }
+            }
+        }
+
+        &__slider-wrapper {
+            width: calc(80% - .5rem);
+
+            &::after {
+                top: -.375em;
+            }
+
+            &::before {
+                top: -.75em;
+            }
+        }
+
+        &__slider-item {
+            padding: 3rem 2rem 2rem 2rem;
+            width: 100%;
+        }
+
+        &__slider-item-title {
+            font-size: 4.5rem;
+        }
+
+        &__slider-item-text {
+            padding-top: 1.5rem;
+            font-size: 1.25rem;
+            max-width: 68%;
+        }
+
+        &__slider-item-options {
+            padding: 4rem 0;
+        }
+
+        &__slider-item-options-item {
+            font-size: 1.5rem;
+        }
+
+        &__slider-item-nav {
+            width: auto;
+
+            .button {
+                border-radius: 1.35rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

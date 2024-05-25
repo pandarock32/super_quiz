@@ -1,0 +1,108 @@
+.default-select {
+  position: relative;
+  display: inline-block;
+}
+.default-select__value {
+  display: none;
+}
+.default-select__button {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  cursor: pointer;
+  outline: 0.1em solid black;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: inherit;
+  background-color: white;
+}
+.default-select__button:active {
+  background-color: #9E00FF;
+  outline-color: #9E00FF;
+}
+.default-select__button:active .default-select__text {
+  color: #FFF;
+}
+.default-select__button:active .default-select__arrow {
+  background-color: white;
+}
+.default-select__text {
+  color: #000;
+}
+.default-select__arrow {
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  width: 1em;
+  height: 0.8em;
+  mask-image: url("/assets/img/components/ui/select/arrow.svg");
+  background-color: black;
+}
+.default-select__dropdown {
+  list-style: none;
+  padding-inline-start: 0;
+  position: relative;
+  width: max-content;
+  max-height: 20rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  padding: 0 2rem;
+  margin-top: 0.75rem;
+  background-color: white;
+  outline: 0.1em solid black;
+  border-radius: 0.8rem;
+  transition: all ease 0.3s;
+}
+.default-select__dropdown-option {
+  padding: 0.5rem 0 0.5em 0;
+  border-bottom: 0.1em solid black;
+  user-select: none;
+  cursor: pointer;
+}
+.default-select__dropdown-option:last-child {
+  border-bottom-color: transparent;
+  padding-bottom: 0.6em;
+}
+.default-select__dropdown-option:active {
+  border-bottom-color: #9E00FF;
+}
+.default-select[data-collapsed=true] .default-select__dropdown {
+  visibility: collapse;
+  max-height: 0;
+}
+.default-select:not([data-collapsed=true]) .default-select__button {
+  background-color: black;
+  outline-color: black;
+}
+.default-select:not([data-collapsed=true]) .default-select__text {
+  color: #FFF;
+}
+.default-select:not([data-collapsed=true]) .default-select__arrow {
+  background-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .default-select__button {
+    padding: 0.75rem 2rem;
+  }
+  .default-select__button:hover {
+    background-color: #9E00FF;
+    outline-color: #9E00FF;
+  }
+  .default-select__button:hover .default-select__text {
+    color: #FFF;
+  }
+  .default-select__button:hover .default-select__arrow {
+    background-color: white;
+  }
+  .default-select:not([data-collapsed=true]) .default-select__button:hover {
+    outline-color: black;
+  }
+  .default-select__dropdown-option:hover {
+    border-bottom-color: #9E00FF;
+  }
+}

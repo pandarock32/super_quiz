@@ -1,0 +1,16 @@
+mixin reviews(items)
+    //@injectCSS(@components/reviews/reviews.css)
+    //@injectJS(@components/reviews/reviews.js)
+    div(id="reviews").reviews
+        button(onclick="window.ui.reviews.prev(this)").reviews__prev
+            span.reviews__prev-icon
+        ul(data-current-position=0).reviews__items
+            each item, i in items
+                li(id=`review${i}` style=`background-image: url('${item.background}')`).reviews__review
+                    div.reviews__review-content
+                        div.reviews__review-content-inner
+                            img(src=item.image, alt="photo "+item.name).reviews__review-photo
+                            span.reviews__review-name= item.name
+                            span.reviews__review-text= item.text
+        button(onclick="window.ui.reviews.next(this)").reviews__next
+            span.reviews__next-icon

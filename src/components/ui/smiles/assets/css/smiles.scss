@@ -1,0 +1,70 @@
+@import "@@vars";
+
+.smiles {
+    display: inline-block;
+
+    padding: .5rem;
+    position: relative;
+    overflow-x: auto;
+    max-width: 100%;
+
+    &__wrapper {
+        @include clear_ul;
+
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+    }
+
+    &__item {
+        &:last-child {
+            padding-right: .5rem;
+        }
+    }
+
+    &__button {
+        @include clear_button;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        padding: .25rem .5rem;
+
+        background-color: white;
+        border-radius: 2rem;
+        transition: background-color $transition;
+        cursor: pointer;
+
+        &:active {
+            background-color: $color-primary;
+            color: $text-color-secondary;
+        }
+    }
+
+    &__label {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    &__text {
+        font-size: .9rem;
+        white-space: nowrap;
+        user-select: none;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .smiles {
+        &__button {
+            gap: 1rem;
+            padding: .5rem 1rem;
+        }
+        &__button:hover {
+            background-color: $color-primary;
+            color: $text-color-secondary
+        }
+    }
+}

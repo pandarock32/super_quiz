@@ -1,0 +1,81 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: black;
+  border-radius: 2rem 2rem 0 0;
+  color: white;
+}
+.footer__site {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.75rem;
+}
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__contacts .socials__item {
+  width: 100%;
+}
+.footer__contacts .socials__item-icon {
+  width: 100%;
+  outline: 0.075rem solid rgba(255, 255, 255, 0.15);
+}
+.footer__contacts-our {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__contacts-our-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.footer__contacts-our-item-label {
+  font-size: 0.8rem;
+}
+.footer__contacts-our-item-href {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-size: 1.25rem;
+  font-family: "Neue Machina";
+  font-weight: 800;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    flex-direction: row-reverse;
+    padding: 3rem;
+    gap: 5.75rem;
+    justify-content: space-between;
+  }
+  .footer__site {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .footer__contacts-our {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .footer__contacts-our-item-label {
+    font-size: 1.25rem;
+  }
+  .footer__contacts-our-item-href {
+    font-size: 1.9rem;
+  }
+  .footer .socials__item-icon {
+    height: 4rem;
+  }
+  .footer .socials__item-icon_tiktok {
+    filter: contrast(0.88);
+  }
+}

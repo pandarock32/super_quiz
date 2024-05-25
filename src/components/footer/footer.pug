@@ -1,0 +1,11 @@
+mixin pageFooter(footer)
+    //@injectCSS(@components/footer/footer.css)
+    footer.footer
+        h3.footer__site= "Super Quiz"
+        div.footer__contacts
+            ul.footer__contacts-our
+                each contact in footer.contacts
+                    li.footer__contacts-our-item
+                        span.footer__contacts-our-item-label= contact.label
+                        a(href=contact.href).footer__contacts-our-item-href= contact.value
+            +socials(socials)

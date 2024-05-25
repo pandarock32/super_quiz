@@ -1,0 +1,8 @@
+include ../ui/index
+
+mixin banner(banner)
+    // @injectCSS(@components/banner/banner.css)
+    div.banner
+        h1.banner__title= banner.title
+        span.banner__text= banner.text
+        a(href="#super_quiz").button= banner.buttonText

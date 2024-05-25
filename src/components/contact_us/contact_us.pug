@@ -1,0 +1,32 @@
+mixin contact_us_dialog()
+    // @injectCSS(@components/contact_us/contact_us.css)
+    // @injectJS(@components/contact_us/contact_us.js)
+    dialog.modal#contact_us_dialog
+        form(method="dialog").modal__form
+            button.modal__header-close.button.button_theme_secondary
+            ol.modal__pages
+                li.modal__page#contact_us_page1
+                    div.modal__page-header
+                        p.modal__page-header-title Заполните контактные данные
+                    div.modal__page-content
+                        span.modal__page-content-text Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!
+                        div.modal__page-content-inputs
+                            input(placeholder="Ваше имя").modal__page-content-input-firstname.default-input
+                            input(placeholder="Фамилия").modal__page-content-input-lastname.default-input
+                            +input_file("Ваш комментарий")
+                        span.modal__page-content-another-text Этот квиз предназначен для тех людей, которые любят проходить тесты!
+                        div.modal__page-content-another-inputs
+                            +quiz_radio("dialog_radio_1", "some_name", "Не знаю", "dont_know")
+                            +quiz_radio("dialog_radio_2", "some_name", "Увидел это", "seen")
+                            +quiz_radio("dialog_radio_3", "some_name", "Вон то", "there")
+                            +quiz_radio("dialog_radio_4", "some_name", "Вон то", "there_2")
+                            +quiz_radio("dialog_radio_5", "some_name", "Увидел это", "seen_2")
+                            +quiz_radio("dialog_radio_6", "some_name", "Не знаю", "dont_know2")
+                        a(href="#contact_us_page2" onclick="window.ui.dialog.openPage(this, '#contact_us_page2')").modal__page-content-next-button.button Продолжить
+                li.modal__page#contact_us_page2
+                    div.modal__page-header
+                        img(alt="😉" src="/assets/img/components/contact_us/smile.png").modal__page-header-smile
+                        p.modal__page-header-title Ваши данные Отправлены
+                    div.modal__page-content
+                        span.modal__page-content-text Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!
+                        button.modal__page-content-next-button.button Продолжить

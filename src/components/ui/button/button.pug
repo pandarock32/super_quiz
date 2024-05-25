@@ -1,0 +1,5 @@
+
+mixin ui_button(id, className, type, text, onClick, attributes)
+    // @injectJS(@components/ui/button/button.js)
+    // @injectCSS(@components/ui/button/button.css)
+    button(id=id, class="button " + className, type=type, onclick=onClick)= text

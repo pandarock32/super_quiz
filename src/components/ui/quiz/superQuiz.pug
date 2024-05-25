@@ -1,0 +1,18 @@
+include assets/slide
+
+mixin superQuiz(quiz)
+    // @injectCSS(@components/ui/quiz/super_quiz.css)
+    // @injectJS(@components/ui/quiz/super_quiz.js)
+    div(id=quiz.id).super_quiz_block
+        form.super-quiz
+            nav.super-quiz__history-wrapper
+                ul.super-quiz__history
+                    each slide, i in quiz.slides
+                        li(data-slide-id=i class=`${i === 0 ? "super-quiz__history-item_current super-quiz__history-item_rounded" : "super-quiz__history-item_invisible"}`).super-quiz__history-item
+                            button(type="button" onclick="window.ui.quiz.open(this)").super-quiz__history-item-inner
+                                span.super-quiz__history-item-name= slide.title
+                                span.super-quiz__history-item-value Пройди, и будешь счастлив.
+            div.super-quiz__slider-wrapper
+                ul.super-quiz__slider
+                    each slide, i in quiz.slides
+                        +slide(quiz, slide, i, `${quiz.id}_slide_${i}`)

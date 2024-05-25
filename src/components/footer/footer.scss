@@ -1,0 +1,109 @@
+@import "@@vars";
+
+.footer {
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+
+    background-color: black;
+    border-radius: 2rem 2rem 0 0;
+
+    color: white;
+
+    &__site {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.75rem;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .socials {
+            &__item {
+                width: 100%;
+            }
+
+            &__item-icon {
+                width: 100%;
+                outline: .075rem solid rgba(255, 255, 255, .15);
+            }
+        }
+    }
+
+    &__contacts-our {
+        @include clear_ul;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__contacts-our-item {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+    }
+
+    &__contacts-our-item-label {
+        font-size: .8rem;
+    }
+
+    &__contacts-our-item-href {
+        @include clear_a;
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: white;
+        font-size: 1.25rem;
+        font-family: "Neue Machina";
+        font-weight: 800;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .footer {
+        flex-direction: row-reverse;
+        padding: 3rem;
+        gap: 5.75rem;
+        justify-content: space-between;
+
+        &__site {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 0;
+        }
+
+        &__contacts {
+
+        }
+
+        &__contacts-our {
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        &__contacts-our-item-label {
+            font-size: 1.25rem;
+        }
+
+        &__contacts-our-item-href {
+            font-size: 1.9rem;
+        }
+
+        .socials__item-icon {
+            height: 4rem;
+        }
+
+        .socials__item-icon_tiktok {
+            filter: contrast(.88);
+        }
+
+
+
+    }
+}
